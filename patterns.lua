@@ -11,13 +11,17 @@ end
 
 local patterns = rs.getPatterns()
 
+local function printItem(item)
+  print(item['label'] .. " (" .. item['name'] ..") <Damage: " .. item['damage'] .. ">")
+end
+
 for i, pattern in ipairs(patterns) do
-  local name = pattern['outputs'][1]['name']
+  local item = pattern['outputs'][1]
   if (filter ~= nil) then
-    if (name:find(filter) ~= nil) then
-      print(name)
+    if (item['name']:find(filter) ~= nil or item['label']:lower():find(filter) ~= nil) then
+      printItem(item)
     end
   else
-    print(name)
+    printItem(item)
   end
 end
