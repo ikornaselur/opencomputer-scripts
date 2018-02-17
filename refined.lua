@@ -23,7 +23,11 @@ while (true) do
 
       if (toCraft > 0) then
         print("Crafting " .. toCraft .. " of " .. stack.name)
-        rs.craftItem(stack, toCraft)
+        if (rs.getTasks()['n'] > 0) then
+          print("Queue is not empty, will only craft when idle..")
+        else
+          rs.craftItem(stack, toCraft)
+        end
       end
     else
       print("Missing pattern for: " .. stack.name)
