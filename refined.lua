@@ -5,7 +5,13 @@ local rs = component.block_refinedstorage_interface
 
 local targetAmount = 64
 local items = {
-  {name = "minecraft:redstone_torch"}
+  {name = "minecraft:redstone_torch"},
+  {name = "minecraft:gold_nugget"},
+  {name = "immersiveengineering:metal", damage = 29},
+  {name = "mysticalagriculture:prudentium_essence"},
+  {name = "mysticalagriculture:intermedium_essence"},
+  {name = "mysticalagriculture:superium_essence"},
+  {name = "mysticalagriculture:supremium_essence"},
 }
 
 
