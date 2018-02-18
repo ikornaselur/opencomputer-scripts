@@ -5,13 +5,13 @@ local rs = component.block_refinedstorage_interface
 
 local targetAmount = 64
 local items = {
-  {name = "minecraft:redstone_torch"},
-  {name = "minecraft:gold_nugget"},
-  {name = "immersiveengineering:metal", damage = 29},  -- Iron Nugent
-  {name = "refinedstorage:processor", damage = 0},  -- Printed Basic Processor
-  {name = "refinedstorage:processor", damage = 1},  -- Printed Improved Processor
-  {name = "refinedstorage:processor", damage = 2},  -- Printed Advanced Processor
-  {name = "refinedstorage:processor", damage = 6},  -- Printed Silicon
+  {name = "minecraft:redstone_torch", label = "Redstone Torch"},
+  {name = "minecraft:gold_nugget", label = "Gold Nugget"},
+  {name = "immersiveengineering:metal", damage = 29, label = "Iron Nugget"},
+  {name = "refinedstorage:processor", damage = 0, label = "Printed Basic Processor"},
+  {name = "refinedstorage:processor", damage = 1, label = "Printed Improved Processor"},
+  {name = "refinedstorage:processor", damage = 2, label = "Printed Advanced Processor"},
+  {name = "refinedstorage:processor", damage = 6, label = "Printed Silicon"}
 }
 
 
@@ -27,8 +27,7 @@ while (true) do
 
       if (toCraft > 0) then
         if (rs.getTasks()['n'] == 0) then  -- Only craft when idle
-          local itemInfo = rs.getItem(stack)
-          print("Crafting " .. toCraft .. " of " .. itemInfo.label)
+          print("Crafting " .. toCraft .. " of " .. stack.label)
           rs.craftItem(stack, toCraft)
         end
       end
