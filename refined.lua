@@ -5,13 +5,13 @@ local utils = require("utils")
 local rs = component.block_refinedstorage_interface
 
 local items = {
-  {name = "minecraft:redstone_torch", label = "Redstone Torch", amount = 64},
-  {name = "minecraft:gold_nugget", label = "Gold Nugget", amount = 64},
-  {name = "immersiveengineering:metal", damage = 29, label = "Iron Nugget", amount = 64},
-  {name = "refinedstorage:processor", damage = 0, label = "Printed Basic Processor", amount = 32},
-  {name = "refinedstorage:processor", damage = 1, label = "Printed Improved Processor", amount = 32},
-  {name = "refinedstorage:processor", damage = 2, label = "Printed Advanced Processor", amount = 32},
-  {name = "refinedstorage:processor", damage = 6, label = "Printed Silicon", amount = 32}
+  {name = "minecraft:redstone_torch",  amount = 64},
+  {name = "minecraft:gold_nugget",  amount = 64},
+  {name = "immersiveengineering:metal", damage = 29, amount = 64},
+  {name = "refinedstorage:processor", damage = 0, amount = 32},
+  {name = "refinedstorage:processor", damage = 1, amount = 32},
+  {name = "refinedstorage:processor", damage = 2, amount = 32},
+  {name = "refinedstorage:processor", damage = 6, amount = 32}
 }
 
 
@@ -27,7 +27,7 @@ while (true) do
 
       if (toCraft > 0) then
         if (rs.getTasks()['n'] == 0) then  -- Only craft when idle
-          print(os.date("%Y-%m-%d %H:%M:%S") .. " " .. "Crafting " .. toCraft .. " of " .. stack.label)
+          print(os.date("%Y-%m-%d %H:%M:%S") .. " " .. "Crafting " .. toCraft .. " of " .. rsStack.label)
           rs.craftItem(stack, toCraft)
         end
       end
