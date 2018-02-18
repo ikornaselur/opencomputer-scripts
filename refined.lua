@@ -18,7 +18,7 @@ local items = {
 while (true) do
   for i, stack in ipairs(items) do
     if (rs.hasPattern(stack)) then
-      local rsStack = rs.getItem(stack)
+      local rsStack = rs.getItem(stack, true)  -- Compare metadata (damage)
       local toCraft = stack.amount
 
       if (rsStack ~= nil) then
