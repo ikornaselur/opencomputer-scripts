@@ -26,10 +26,8 @@ while (true) do
       end
 
       if (toCraft > 0) then
-        print("Crafting " .. toCraft .. " of " .. stack.name)
-        if (rs.getTasks()['n'] > 0) then
-          print("Queue is not empty, will only craft when idle..")
-        else
+        if (rs.getTasks()['n'] == 0) then  -- Only craft when idle
+          print("Crafting " .. toCraft .. " of " .. stack.name)
           rs.craftItem(stack, toCraft)
         end
       end
