@@ -7,7 +7,11 @@ local targetAmount = 64
 local items = {
   {name = "minecraft:redstone_torch"},
   {name = "minecraft:gold_nugget"},
-  {name = "immersiveengineering:metal", damage = 29},
+  {name = "immersiveengineering:metal", damage = 29},  -- Iron Nugent
+  {name = "refinedstorage:processor", damage = 0},  -- Printed Basic Processor
+  {name = "refinedstorage:processor", damage = 1},  -- Printed Improved Processor
+  {name = "refinedstorage:processor", damage = 2},  -- Printed Advanced Processor
+  {name = "refinedstorage:processor", damage = 6},  -- Printed Silicon
 }
 
 
