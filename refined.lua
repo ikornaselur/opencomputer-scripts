@@ -27,7 +27,8 @@ while (true) do
 
       if (toCraft > 0) then
         if (rs.getTasks()['n'] == 0) then  -- Only craft when idle
-          print("Crafting " .. toCraft .. " of " .. stack.name)
+          local itemInfo = rs.getItem(stack)
+          print("Crafting " .. toCraft .. " of " .. itemInfo.label)
           rs.craftItem(stack, toCraft)
         end
       end
